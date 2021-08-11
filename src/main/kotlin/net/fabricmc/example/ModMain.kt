@@ -1,6 +1,7 @@
 package net.fabricmc.example
 
 import net.fabricmc.api.ModInitializer
+import net.fabricmc.example.effect.EffectRegister
 import net.fabricmc.example.items.ItemRegister
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings
 import net.minecraft.item.Item
@@ -16,6 +17,8 @@ public class ModMain : ModInitializer {
         // Proceed with mild caution
         val ir = ItemRegister()
         ir.OnInit()
+        var fr = EffectRegister()
+        fr.OnInit()
         onInitialize()
     }
 }

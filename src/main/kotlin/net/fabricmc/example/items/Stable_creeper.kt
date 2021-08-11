@@ -11,7 +11,7 @@ import net.minecraft.util.TypedActionResult
 import net.minecraft.world.World
 
 
-public class item_tasty(settings: Settings?) : Item(settings) {
+public class stable_creeper_instance(settings: Settings?) : Item(settings) {
     override fun use(world: World?, user: PlayerEntity?, hand: Hand?): TypedActionResult<ItemStack> {
         println("food used")
         return super.use(world, user, hand)
@@ -19,12 +19,11 @@ public class item_tasty(settings: Settings?) : Item(settings) {
     }
     }
 
-class tasty_item {
+class stable_creeper {
 
     // an instance of our new item
     companion object {
-        val foodcom = (FoodComponent.Builder().hunger(2).alwaysEdible().saturationModifier(0.1f)).snack().build()
-        val tastyItem = item_tasty(FabricItemSettings().group(ItemGroup.FOOD).food(foodcom))
+        val stableCreeper = stable_creeper_instance(FabricItemSettings().group(ItemGroup.MISC))
     }
 
 }
