@@ -15,7 +15,7 @@ import net.minecraft.world.GameRules
 import net.minecraft.world.explosion.Explosion.DestructionType
 
 
-class entity : StatusEffect(
+class creep_stab : StatusEffect(
     StatusEffectType.BENEFICIAL,  // whether beneficial or harmful for entities
     0x98D982
 ) {
@@ -28,9 +28,10 @@ class entity : StatusEffect(
 
     // entity method is called when it applies the status effect. We implement custom functionality here.
     override fun applyUpdateEffect(entity: LivingEntity, amplifier: Int) {
-        if (entity is CreeperEntity) {
+        if (entity is CreeperEntity && entity.fuseSpeed != 1) {
             val shuff = Math.random()
-            if (shuff < 0.25) {
+            if (shuff > entity.health/(entity.maxHealth+5)) {
+
                 println(shuff)
                 val stack = ItemStack(stable_creeper.stableCreeper)
                 var itemEntity: ItemEntity? = ItemEntity(entity.world, entity.x, entity.y, entity.z, stack)
@@ -38,7 +39,9 @@ class entity : StatusEffect(
                 entity.remove(Entity.RemovalReason.DISCARDED)
             } else {
                 println(shuff)
+                entity.clearStatusEffects()
                 entity.ignite()
+
             }
 
         }
@@ -53,7 +56,7 @@ class creeper_stab_potion : Potion(
 class creeper_stabilize {
     companion object {
 
-        val stab = entity()
+        val stab = creep_stab()
         val stab_potion = creeper_stab_potion()
     }
 }
