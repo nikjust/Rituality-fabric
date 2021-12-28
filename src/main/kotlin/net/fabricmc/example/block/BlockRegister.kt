@@ -9,10 +9,11 @@ open class BlockRegister() {
     init {
         println("Lol")
     }
-    fun OnInit(){
+
+    fun OnInit() {
         println("Block Register in progress")
-        Registry.register<Block, Block>(Registry.BLOCK, Identifier("rituality", "creep_frame"), creeper_frame_reg.block)
-        Registry.register<Item, Item>(Registry.ITEM, Identifier("rituality", "creep_frame"), creeper_frame_reg.item)
+        Registry.register<Block, Block>(Registry.BLOCK, Identifier("rituality", "creep_frame"), creeper_frame.block)
+        Registry.register<Item, Item>(Registry.ITEM, Identifier("rituality", "creep_frame"), creeper_frame.item)
         println("Block Register complete")
 
         println("lol")

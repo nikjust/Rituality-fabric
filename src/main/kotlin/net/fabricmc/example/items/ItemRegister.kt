@@ -12,11 +12,16 @@ open class ItemRegister() {
     init {
         println("Lol")
     }
-    fun OnInit(){
+
+    fun OnInit() {
         println("Items Register in progress")
         Registry.register(Registry.ITEM, Identifier("rituality", "tasty_item"), tasty_item.tastyItem)
         Registry.register(Registry.ITEM, Identifier("rituality", "stable_creeper"), stable_creeper.stableCreeper)
-        Registry.register( Registry.POTION, Identifier("rituality", "creeper_stabilize_potion"), Potion(*arrayOf(StatusEffectInstance(creeper_stabilize.stab, 40))))
+        Registry.register(
+            Registry.POTION,
+            Identifier("rituality", "creeper_stabilize_potion"),
+            Potion(*arrayOf(StatusEffectInstance(creeper_stabilize.stab, 40)))
+        )
         println("Items Register complete")
 
         println("lol")

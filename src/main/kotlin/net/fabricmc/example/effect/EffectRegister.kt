@@ -11,8 +11,8 @@ open class EffectRegister() {
     init {
         println("Lol")
     }
-    fun OnInit(){
-        Potions.AWKWARD
+
+    fun OnInit() {
         println("effect Register in progress")
         Registry.register(Registry.STATUS_EFFECT, Identifier("rituality", "creeper_stab"), creeper_stabilize.stab)
         println("effect Register complete")

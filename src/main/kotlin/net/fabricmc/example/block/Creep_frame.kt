@@ -13,25 +13,17 @@ import net.minecraft.entity.effect.StatusEffectInstance
 import net.minecraft.entity.effect.StatusEffectType
 import net.minecraft.entity.mob.CreeperEntity
 import net.minecraft.item.BlockItem
+import net.minecraft.item.ItemGroup
 import net.minecraft.item.ItemStack
 import net.minecraft.nbt.NbtCompound
 import net.minecraft.potion.Potion
 import net.minecraft.world.GameRules
 import net.minecraft.world.explosion.Explosion.DestructionType
 
-
-class creep_frame(settings: Settings?) : Block(settings) {
-
-}
-
-class creep_frame_item(block: Block?, settings: Settings?) : BlockItem(block, settings){
-
-}
-
-class creeper_frame_reg {
+class creeper_frame {
     companion object {
 
-        val block = creep_frame(FabricBlockSettings.of(Material.METAL))
-        val item = creep_frame_item(block, FabricItemSettings())
+        val block = Block(FabricBlockSettings.of(Material.METAL))
+        val item = BlockItem(block, FabricItemSettings().group(ItemGroup.DECORATIONS))
     }
 }

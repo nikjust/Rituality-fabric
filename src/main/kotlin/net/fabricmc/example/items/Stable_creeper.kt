@@ -17,7 +17,7 @@ public class stable_creeper_instance(settings: Settings?) : Item(settings) {
         return super.use(world, user, hand)
 
     }
-    }
+}
 
 class stable_creeper {
 

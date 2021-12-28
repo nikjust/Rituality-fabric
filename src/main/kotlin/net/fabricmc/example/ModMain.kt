@@ -11,11 +11,12 @@ import net.minecraft.util.Identifier
 import net.minecraft.util.registry.Registry
 
 public class ModMain : ModInitializer {
-    override fun onInitialize() {println("Hello Fabric world!")}
+    override fun onInitialize() {}
     fun init() {
         // This code runs as soon as Minecraft is in a mod-load-ready state.
         // However, some things (like resources) may still be uninitialized.
         // Proceed with mild caution
+
         val ir = ItemRegister()
         ir.OnInit()
         var fr = EffectRegister()

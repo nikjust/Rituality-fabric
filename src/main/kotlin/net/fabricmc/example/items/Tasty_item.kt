@@ -17,7 +17,7 @@ public class item_tasty(settings: Settings?) : Item(settings) {
         return super.use(world, user, hand)
 
     }
-    }
+}
 
 class tasty_item {
 
